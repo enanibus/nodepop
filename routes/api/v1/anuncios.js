@@ -5,6 +5,7 @@ let router = express.Router();
 
 let mongoose = require('mongoose');
 let Anuncio = mongoose.model('Anuncio');
+let errorHandler = require('../../../lib/error');
 
 // auth
 let jwtAuth = require('../../../lib/jwtAuth');
@@ -16,8 +17,6 @@ router.get('/', function(req, res) {
     let limit = parseInt(req.query.limit) || null;
     let sort = req.query.sort || null;
 
-    // console.log(name);
-
     let criteria = {};
 
     if (typeof name !== 'undefined') {
@@ -26,9 +25,8 @@ router.get('/', function(req, res) {
 
     Anuncio.list(criteria, start, limit, sort, function(err, rows) {
         if (err) {
-            return res.json({success: false, error: err});
+            return errorHandler(new Error('Internal server error'), req, res, 500);
         }
-
         res.json({success: true, rows: rows});
     });
 });

@@ -3,9 +3,9 @@
 let mongoose = require('mongoose');
 
 let usuarioSchema = mongoose.Schema({
-    nombre: String,
-    email: { type: String, index: true },
-    clave: String
+    nombre: { type: String, required: true},
+    email: { type: String, required: true },
+    clave: { type: String, required: true}
 });
 
 usuarioSchema.statics.deleteAll = function(cb){
@@ -19,7 +19,7 @@ usuarioSchema.statics.deleteAll = function(cb){
      });
 };
 
-// usuarioSchema.index({'email':1},{ unique: true });
+usuarioSchema.index({ 'email': 1 }, { unique: true });
 
 
 let Usuario = mongoose.model('Usuario', usuarioSchema);

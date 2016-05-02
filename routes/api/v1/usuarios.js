@@ -2,6 +2,7 @@
 
 let jwt = require('jsonwebtoken');
 let config = require('../../../config/local_config');
+let errorHandler = require('../../../lib/error');
 let sha256 = require('sha256');
 
 let express = require('express');
@@ -9,11 +10,6 @@ let router = express.Router();
 
 let Usuario = require('mongoose').model('Usuario');
 let PushToken = require('mongoose').model('PushToken');
-
-require('../../../lib/error');
-
-// auth
-let jwtAuth = require('../../../lib/jwtAuth');
 
 
 router.post('/authenticate', function(req, res) {
@@ -28,14 +24,15 @@ router.post('/authenticate', function(req, res) {
         }
 
         if (!user) {
-            return res.status(401).json({success: false, error: 'Authentication failed. User not found'});
+            return errorHandler(new Error('Authentication failed. User not found'), req, res, 401);
         }
 
         if (sha256(clave) !== user.clave) {
-            return res.status(401).json({success: false, error: 'Authentication failed, Invalid password'});
+            //return res.status(401).json({success: false, error: 'Authentication failed, Invalid password'});
+            return errorHandler(new Error('Authentication failed, Invalid password'), req, res, 401);
         }
-        // match!
-        var token = jwt.sign({id: user._id}, config.jwt.secret, { expiresIn: '2 days' });
+
+        let token = jwt.sign({id: user._id}, config.jwt.secret, { expiresIn: '2 days' });
         res.json({ success: true, token: token });
     });
 
