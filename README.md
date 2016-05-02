@@ -36,5 +36,5 @@ Backend para dar soporte a una aplicación de venta de artículos de segunda man
 
 ## Autor
 
-&copy;2016 Jacobo Enríquez.
+&copy; 2016 Jacobo Enríquez.
 

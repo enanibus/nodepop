@@ -1,0 +1,85 @@
+{
+  "anuncios": [
+    {
+      "nombre": "Bicicleta Scott",
+      "venta": true,
+      "precio": 230.15,
+      "foto": "bici.jpg",
+      "tags": [ "lifestyle", "motor"]
+    },
+    {
+      "nombre": "iPhone 3GS",
+      "venta": false,
+      "precio": 50.00,
+      "foto": "iphone.png",
+      "tags": [ "lifestyle", "mobile"]
+    },
+    {
+      "nombre": "Converse All Star",
+      "venta": true,
+      "precio": 9.99,
+      "foto": "zapatilla.jpg",
+      "tags": [ "work", "lifestyle"]
+    },
+    {
+      "nombre": "Samsung Galaxy 6",
+      "venta": false,
+      "precio": 190.00,
+      "foto": "samsung.jpg",
+      "tags": [ "mobile", "work"]
+    },    {
+      "nombre": "Drone GoPro",
+      "venta": true,
+      "precio": 299.00,
+      "foto": "dron.jpg",
+      "tags": [ "lifestyle", "motor"]
+    },
+    {
+      "nombre": "iPhone 6S",
+      "venta": false,
+      "precio": 50.00,
+      "foto": "iphone6s.jpg",
+      "tags": [ "lifestyle", "mobile"]
+    },    {
+      "nombre": "Bicicleta BH",
+      "venta": true,
+      "precio": 10.00,
+      "foto": "bici2.jpg",
+      "tags": [ "lifestyle", "work" , "motor"]
+    },
+    {
+      "nombre": "Cartera Dior",
+      "venta": false,
+      "precio": 49.00,
+      "foto": "cartera.jpg",
+      "tags": [ "lifestyle", "mobile"]
+    },    {
+      "nombre": "Bolso Valentino",
+      "venta": true,
+      "precio": 25.15,
+      "foto": "bolso.jpg",
+      "tags": [ "lifestyle", "work"]
+    },
+    {
+      "nombre": "iMac 27'' 2011",
+      "venta": false,
+      "precio": 199.99,
+      "foto": "imac.jpg",
+      "tags": [ "lifestyle", "mobile", "work"]
+    },
+    {
+      "nombre": "Puch Cobra Classic",
+      "venta": true,
+      "precio": 499.00,
+      "foto": "moto.jpg",
+      "tags": [ "work", "motor"]
+    },
+    {
+      "nombre": "Samsung Galaxy Ace",
+      "venta": false,
+      "precio": 5.00,
+      "foto": "samsung2.jpg",
+      "tags": [ "lifestyle", "mobile"]
+    }
+  ]
+}

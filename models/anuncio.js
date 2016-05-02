@@ -1,15 +1,34 @@
-"use strict"
+'use strict';
 
-var mongoose = require('mongoose');
+let mongoose = require('mongoose');
 
-
-var anuncioSchema = mongoose.Schema({
+let anuncioSchema = mongoose.Schema({
 	nombre: String,
 	venta: Boolean,
 	precio: Number,
 	foto: String,
 	tags: [String]
-});
+});
+
+anuncioSchema.statics.list = function(filter, start, limit, sort, callback) {
+	var query = Anuncio.find(filter);
+	query.skip(start);
+	query.limit(limit);
+	query.sort(sort);
+	return query.exec(callback);
+};
+
+anuncioSchema.statics.deleteAll = function(cb) {
+	Anuncio.remove({}, function(err) {
+		console.log('Borrando tabla de Anuncios...');
+		if (err) {
+			console.error('Error en el borrado de la tabla de Anuncios: ', err);
+			return cb(err);
+		}
+		cb(null);
+	});
+};
 
 
-mongoose.model('Anuncio', anuncioSchema);
+
+let Anuncio = mongoose.model('Anuncio', anuncioSchema);
