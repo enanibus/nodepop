@@ -11,7 +11,7 @@ let anuncioSchema = mongoose.Schema({
 });
 
 anuncioSchema.statics.list = function(filter, start, limit, sort, callback) {
-	var query = Anuncio.find(filter);
+	let query = Anuncio.find(filter);
 	query.skip(start);
 	query.limit(limit);
 	query.sort(sort);

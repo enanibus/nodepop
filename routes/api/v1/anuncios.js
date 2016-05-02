@@ -12,16 +12,16 @@ let jwtAuth = require('../../../lib/jwtAuth');
 //router.use(jwtAuth());
 
 router.get('/', function(req, res) {
-    let name = req.query.nombre;
+
     let start = parseInt(req.query.start) || 0;
     let limit = parseInt(req.query.limit) || null;
     let sort = req.query.sort || null;
-
     let criteria = {};
 
-    if (typeof name !== 'undefined') {
-        criteria.name = name;
+    if (typeof req.query.nombre !== 'undefined') {
+        criteria.nombre = req.query.nombre;
     }
+    console.log(criteria.nombre);
 
     Anuncio.list(criteria, start, limit, sort, function(err, rows) {
         if (err) {

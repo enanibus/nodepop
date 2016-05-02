@@ -32,9 +32,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', require('./routes/index'));
 
 // API routes
-app.use ('/images/anuncios', express.static (__dirname + '/public/images/anuncios'));
+app.use ('/images/anuncios', express.static (__dirname + '/public/images/anunc' +
+    'ios'));
 app.use('/api/v1/anuncios', require('./routes/api/v1/anuncios'));
 app.use('/api/v1/usuarios', require('./routes/api/v1/usuarios'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

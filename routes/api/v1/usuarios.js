@@ -1,6 +1,10 @@
 'use strict';
 
 let jwt = require('jsonwebtoken');
+
+// auth
+let jwtAuth = require('../../../lib/jwtAuth');
+
 let config = require('../../../config/local_config');
 let errorHandler = require('../../../lib/error');
 let sha256 = require('sha256');
@@ -23,7 +27,7 @@ router.post('/authenticate', function(req, res) {
             return errorHandler(new Error('Internal server error'), req, res, 500);
         }
         if (!user) {
-            return errorHandler(new Error('Authentication failed. User not found'), req, res, 401);
+            return errorHandler(new Error('Authentication failed. User not found'), req, res, 404);
         }
         if (sha256(clave) !== user.clave) {
             return errorHandler(new Error('Authentication failed, Invalid password'), req, res, 401);
@@ -32,6 +36,11 @@ router.post('/authenticate', function(req, res) {
         res.json({ success: true, token: token });
     });
 
+});
+
+router.get('/authenticate', jwtAuth(), function(req, res) {
+    res.json({ success: true, message: 'User authenticated with token!'
+    });
 });
 
 
