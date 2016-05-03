@@ -4,7 +4,6 @@ let async = require('async');
 
 // Hash
 let sha256 = require('sha256');
-// let secret = require('../config/local_config').jwt.secret;
 
 // Database
 require('../lib/connectDatabase');
