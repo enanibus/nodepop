@@ -18,14 +18,14 @@ anuncioSchema.statics.list = function(filter, start, limit, sort, callback) {
 	return query.exec(callback);
 };
 
-anuncioSchema.statics.deleteAll = function(cb) {
+anuncioSchema.statics.deleteAll = function(callback) {
 	Anuncio.remove({}, function(err) {
 		console.log('Borrando tabla de Anuncios...');
 		if (err) {
 			console.error('Error en el borrado de la tabla de Anuncios: ', err);
 			return cb(err);
 		}
-		cb(null);
+		callback(null);
 	});
 };
 

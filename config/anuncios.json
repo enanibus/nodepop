@@ -76,7 +76,7 @@
     },
     {
       "nombre": "Samsung Galaxy Ace",
-      "venta": false,
+      "venta": true,
       "precio": 5.00,
       "foto": "samsung2.jpg",
       "tags": [ "lifestyle", "mobile"]

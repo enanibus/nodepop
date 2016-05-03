@@ -1,6 +1,7 @@
 'use strict';
 
-let tags = [ 'work', 'lifestyle', 'motor', 'mobile' ];
+
+let tags = { tags: ['work', 'lifestyle', 'motor', 'mobile'] };
 
 let listTags = function(callback) {
     callback(null, tags);

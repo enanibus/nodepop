@@ -18,6 +18,10 @@ let PushToken = require('mongoose').model('PushToken');
 
 router.post('/authenticate', function(req, res) {
 
+    if (!req.body.nombre || !req.body.clave) {
+        return errorHandler(new Error('Authentication failed. Missing params'), req, res, 400);
+    }
+
     let nombre = req.body.nombre;
     let email = req.body.email;
     let clave = req.body.clave;
