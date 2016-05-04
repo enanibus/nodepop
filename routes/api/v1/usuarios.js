@@ -1,32 +1,26 @@
 'use strict';
 
-let jwt = require('jsonwebtoken');
-
-// auth
-let jwtAuth = require('../../../lib/jwtAuth');
-
+let express = require('express');
+let router = express.Router();
 let config = require('../../../config/local_config');
 let errorHandler = require('../../../lib/error');
 let sha256 = require('sha256');
-
-let express = require('express');
-let router = express.Router();
-
 let Usuario = require('mongoose').model('Usuario');
 let PushToken = require('mongoose').model('PushToken');
-
+let jwt = require('jsonwebtoken');
+let jwtAuth = require('../../../lib/jwtAuth');
 
 router.post('/authenticate', function(req, res) {
 
-    if (!req.body.nombre || !req.body.clave) {
+    if (!req.body.email || !req.body.clave) {
         return errorHandler(new Error('Authentication failed. Missing params'), req, res, 400);
     }
 
-    let nombre = req.body.nombre;
+    //let nombre = req.body.nombre;
     let email = req.body.email;
     let clave = req.body.clave;
 
-    Usuario.findOne({nombre: nombre}, function(err, user) {
+    Usuario.findOne({email: email}, function(err, user) {
         if (err) {
             return errorHandler(new Error('Internal server error'), req, res, 500);
         }
