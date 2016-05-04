@@ -4,6 +4,7 @@ let async = require('async');
 
 // Hash
 let sha256 = require('sha256');
+// let secret = require('../config/local_config').jwt.secret;
 
 // Database
 require('../lib/connectDatabase');
@@ -34,7 +35,6 @@ async.series([
                 if (err) {
                     console.error('Error en el borrado de la tabla de Anuncios: ', err);
                     return callback(err);
-
                 }
                 console.log('Hecho.');
                 callback(null, 'bajaAnuncios');

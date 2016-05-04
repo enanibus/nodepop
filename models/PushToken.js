@@ -8,16 +8,5 @@ let pushTokenSchema = mongoose.Schema({
     usuario: String
 });
 
-pushTokenSchema.statics.deleteAll = function(callback){
-     PushToken.remove({}, function(err) {
-         console.log('Borrando tabla de Notificaciones Push...');
-         if (err) {
-             console.error('Error en el borrado de la tabla de Notificaciones Push: ', err);
-             return cb(err);
-         }
-         callback(null);
-     });
-};
-
 
 let PushToken = mongoose.model('PushToken', pushTokenSchema);

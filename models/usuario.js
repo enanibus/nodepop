@@ -8,17 +8,6 @@ let usuarioSchema = mongoose.Schema({
     clave: { type: String, required: true}
 });
 
-usuarioSchema.statics.deleteAll = function(callback){
-     Usuario.remove({}, function(err) {
-         console.log('Borrando tabla de Usuarios...');
-         if (err) {
-             console.error('Error en el borrado de la tabla de Usuarios: ', err);
-             return cb(err);
-         };
-         callback(null);
-     });
-};
-
 usuarioSchema.index({ 'email': 1 }, { unique: true });
 
 

@@ -5,7 +5,7 @@ let router = express.Router();
 
 let mongoose = require('mongoose');
 let Anuncio = mongoose.model('Anuncio');
-let filtro = require('../../../models/filtros');
+let filtro = require('../../../lib/filtros');
 let errorHandler = require('../../../lib/error');
 
 // auth
