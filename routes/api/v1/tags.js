@@ -2,7 +2,6 @@
 
 let express = require('express');
 let router = express.Router();
-
 let errorHandler = require('../../../lib/error');
 let Tag = require('../../../models/Tag');
 
