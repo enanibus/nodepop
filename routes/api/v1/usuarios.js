@@ -6,9 +6,9 @@ let config = require('../../../config/local_config');
 let errorHandler = require('../../../lib/error');
 let sha256 = require('sha256');
 let Usuario = require('mongoose').model('Usuario');
-let PushToken = require('mongoose').model('PushToken');
 let jwt = require('jsonwebtoken');
 let jwtAuth = require('../../../lib/jwtAuth');
+let validator = require('email-validator');
 
 
 router.post('/authenticate', function(req, res) {
@@ -49,6 +49,10 @@ router.post('/registro', function(req, res) {
         return errorHandler(new Error('Sigin failed. Missing params'), req, res, 400);
     }
 
+    if (!validator.validate(req.body.email)) {
+        return errorHandler(new Error('Sigin failed. Email invalid format'), req, res, 400);
+    }
+
     console.log(req.body);
 
     new Usuario({
@@ -63,7 +67,7 @@ router.post('/registro', function(req, res) {
             return errorHandler(new Error('Internal server error'), req, res, 500);
         }
         console.log(result);
-        res.json({ success: true, message: result.email + ' => User inserted successfully!' })
+        res.json({ success: true, message: result + ' => User inserted successfully!' });
     });
 });
 

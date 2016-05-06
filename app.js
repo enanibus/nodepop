@@ -37,6 +37,7 @@ app.use ('/images/anuncios', express.static (__dirname + '/public/images/anunc' 
     'ios'));
 app.use('/api/v1/anuncios', require('./routes/api/v1/anuncios'));
 app.use('/api/v1/usuarios', require('./routes/api/v1/usuarios'));
+app.use('/api/v1/pushTokens', require('./routes/api/v1/pushTokens'));
 app.use('/api/v1/tags', require('./routes/api/v1/tags'));
 
 // catch 404 and forward to error handler
