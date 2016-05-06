@@ -2,11 +2,11 @@
 
 let mongoose = require('mongoose');
 
-let pushTokenSchema = mongoose.Schema({
+let tokenSchema = mongoose.Schema({
     plataforma: {type: String, enum: ['ios', 'android']},
     token: String,
     email: String
 });
 
 
-let PushToken = mongoose.model('PushToken', pushTokenSchema);
+let Token = mongoose.model('Token', tokenSchema);

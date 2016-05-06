@@ -4,7 +4,7 @@ let express = require('express');
 let router = express.Router();
 let config = require('../../../config/local_config');
 let errorHandler = require('../../../lib/error');
-let PushToken = require('mongoose').model('PushToken');
+let Token = require('mongoose').model('Token');
 let plataformas = require('../../../config/local_config').plataformas;
 let validator = require('email-validator');
 
@@ -15,11 +15,7 @@ router.post('/', function(req, res) {
         return errorHandler(new Error('Token push failed. Missing params'), req, res, 400);
     }
 
-    console.log(req.body.plataforma);
-    console.log(plataformas);
-    let pos = plataformas.indexOf(req.body.plataforma);
-    console.log(pos);
-    if (pos == -1) {
+    if (plataformas.indexOf(req.body.plataforma) == -1) {
         return errorHandler(new Error('Token push failed. Platform not valid'), req, res, 400);
     }
 
@@ -27,14 +23,9 @@ router.post('/', function(req, res) {
         return errorHandler(new Error('Token push failed. Email invalid format'), req, res, 400);
     }
 
-
-    console.log('req.body: ');
     console.log(req.body);
 
-    let token = new PushToken({ plataforma: req.body.plataforma, token: req.body.token, email: req.body.email });
-    
-
-    new PushToken ({
+    new Token ({
 
         plataforma : req.body.plataforma,
         token  : req.body.token,

@@ -14,12 +14,12 @@ let conn = mongoose.connection;
 // Models
 require('../models/Anuncio');
 require('../models/Usuario');
-require('../models/PushToken');
+require('../models/Token');
 
 // Entities
 let Anuncio = mongoose.model('Anuncio');
 let Usuario = mongoose.model('Usuario');
-let PushToken = mongoose.model('PushToken');
+let Token = mongoose.model('Token');
 
 // Ficheros
 let fs = require('fs');
@@ -54,7 +54,7 @@ async.series([
         },
 
         function(callback) {
-            PushToken.remove({}, function(err) {
+            Token.remove({}, function(err) {
                 console.log('Borrando tabla de Notificaciones Push...');
                 if (err) {
                     console.error('Error en el borrado de la tabla de Notificaciones Push: ', err);
