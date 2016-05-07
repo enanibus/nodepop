@@ -9,7 +9,7 @@ let errorHandler = require('../../../lib/error');
 let jwtAuth = require('../../../lib/jwtAuth');
 
 
-router.get('/', jwtAuth(), function(req, res) {
+router.get('/', jwtAuth(), function (req, res) {
 
     let start = parseInt(req.query.start) || 0;
     let limit = parseInt(req.query.limit) || 20;
@@ -27,9 +27,7 @@ router.get('/', jwtAuth(), function(req, res) {
             }
             res.json({success: true, rows: rows});
         });
-    }
-
-    else {
+    } else {
 
         Anuncio.list(criteria, start, limit, sort,
             function (err, rows) {

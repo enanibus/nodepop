@@ -6,7 +6,8 @@
   "scripts": {
     "start": "NODE_PATH=nodepop DEBUG=nodepop:app.js nodemon ./bin/www",
     "installDB": "node ./bin/install_db",
-    "jshint": "./node_modules/.bin/jshint . --show-non-errors"
+    "jshint": "./node_modules/.bin/jshint ./routes/api/.",
+    "jscs": "./node_modules/.bin/jscs ./routes/api/."
   },
   "dependencies": {
     "async": "^2.0.0-rc.3",
