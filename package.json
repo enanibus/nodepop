@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "start": "NODE_PATH=nodepop DEBUG=nodepop:app.js nodemon ./bin/www",
-    "installDB": "node ./bin/install_db"
+    "installDB": "node ./bin/install_db",
+    "jshint": "./node_modules/.bin/jshint . --show-non-errors"
   },
   "dependencies": {
     "async": "^2.0.0-rc.3",
