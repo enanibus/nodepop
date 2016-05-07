@@ -1,6 +1,6 @@
 # Nodepop API
 
-**Práctica Node.js - KeepCoding Startup Engineering Master III** 
+**Práctica JS/Node.js/MongoDB - KeepCoding Startup Engineering Master III**
 
 Backend para dar soporte a una aplicación de venta de artículos de segunda mano.
 
