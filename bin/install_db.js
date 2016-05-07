@@ -91,7 +91,7 @@ async.series([
         function(callback) {
             let item = new Usuario();
             item.nombre = 'jacobo';
-            item.email = 'jacobo@gmail.com'
+            item.email = 'jacobo@gmail.com';
             item.clave = sha256('jacobo');
             new Usuario(item).save(function (err, nuevoUsuario) {
                 if (err) {
