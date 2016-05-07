@@ -7,7 +7,8 @@ let anuncioSchema = mongoose.Schema({
 	venta: Boolean,
 	precio: Number,
 	foto: String,
-	tags: [String]
+	tags: [String],
+	audit: { type: Date, default: Date.now }
 });
 
 anuncioSchema.statics.list = function(filter, start, limit, sort, callback) {

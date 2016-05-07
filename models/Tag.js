@@ -1,7 +1,7 @@
 'use strict';
 
+let tags = require('../config/local_config').tags;
 
-let tags = { tags: ['work', 'lifestyle', 'motor', 'mobile'] };
 
 let listTags = function(callback) {
     callback(null, tags);

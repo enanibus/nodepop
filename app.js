@@ -21,7 +21,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -30,6 +29,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use((req, res, next) => {
+  req.lang = req.get('x-lang') || 'en';
+  next();
+});
+
+
+
 app.use('/', require('./routes/index'));
 
 // API routes
@@ -37,7 +43,7 @@ app.use ('/images/anuncios', express.static (__dirname + '/public/images/anunc' 
     'ios'));
 app.use('/api/v1/anuncios', require('./routes/api/v1/anuncios'));
 app.use('/api/v1/usuarios', require('./routes/api/v1/usuarios'));
-app.use('/api/v1/tokens', require('./routes/api/v1/tokens'));
+app.use('/api/v1/pushtokens', require('./routes/api/v1/pushtokens'));
 app.use('/api/v1/tags', require('./routes/api/v1/tags'));
 
 // catch 404 and forward to error handler

@@ -28,10 +28,9 @@ Backend para dar soporte a una aplicación de venta de artículos de segunda man
 ## Ejemplos de uso
 
 
-## Tests
-
-
 ## Changelog
+
+* 0.0.1: start
 
 
 ## Autor

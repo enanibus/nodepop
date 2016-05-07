@@ -5,5 +5,7 @@ module.exports = {
     jwt: {
         secret : 'milikkmilikkmilikk'
     },
-    plataformas: ['ios', 'android']
+    plataformas: ['ios', 'android'],
+    tags: ['work', 'lifestyle', 'motor', 'mobile'],
+    languages: ['en', 'es']
 };

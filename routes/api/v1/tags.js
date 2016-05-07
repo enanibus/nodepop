@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
     
     Tag(function(err, tags) {
         if (err) {
-            return errorHandler(new Error('Internal server error'), req, res, 500);
+            return errorHandler(new Error('Internal server error. DB_FETCH_ERROR'), req, res, 500);
         }
         res.json({success: true, rows: tags });
     });
