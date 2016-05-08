@@ -6,6 +6,12 @@ Backend para dar soporte a una aplicación de venta de artículos de segunda man
 
 ## Instrucciones
 
+Requisitos de instalación:
+
+- Node >= 4.0
+- MongoDB
+- Git
+
 ### Instalación
 
 	$ git clone https://github.com/enanibus/nodepop.git
@@ -17,16 +23,18 @@ Backend para dar soporte a una aplicación de venta de artículos de segunda man
       
 ### Arrancar la base de datos
 	$ npm run installDB
-      
-
-## Documentación
-
+	
+## Documentación detallada
+Mirar en la [wiki](https://github.com/enanibus/nodepop/wiki) del proyecto
 
 ## Operaciones
+Los servicios que proporciona el API son:
 
-
-## Ejemplos de uso
-
+- **Registro** (nombre, email, contraseña)
+- **Autenticación** (email, contraseña)
+- **Lista de anuncios** (paginada, con filtros de búsqueda)
+- **Guardar token de push** (para notificaciones push)
+- **Lista de tags existentes** (categorías de anuncios)
 
 ## Changelog
 
@@ -36,4 +44,5 @@ Backend para dar soporte a una aplicación de venta de artículos de segunda man
 ## Autor
 
 &copy; 2016 Jacobo Enríquez.
+
 
