@@ -2,7 +2,7 @@
 
 let express = require('express');
 let router = express.Router();
-let config = require('../../../config/local_config').jwt;
+let config = require('../../../config/local_config');
 let errorHandler = require('../../../lib/error');
 let sha256 = require('sha256');
 let Usuario = require('mongoose').model('Usuario');
