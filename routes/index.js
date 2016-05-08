@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'nodepop API v1' });
+  res.render('index', { title: 'nodepop API' });
 });
 
 module.exports = router;
