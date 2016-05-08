@@ -22,8 +22,6 @@ router.post('/', function (req, res) {
         return errorHandler(new Error('Token push failed. EMAIL_INVALID_FORMAT'), req, res, 400);
     }
 
-    console.log(req.body);
-
     new Token({
 
         plataforma: req.body.plataforma,
@@ -34,7 +32,6 @@ router.post('/', function (req, res) {
         if (err) {
             return errorHandler(new Error('Internal server error. DB_INSERT_ERROR'), req, res, 500);
         }
-        console.log(result);
         res.json({success: true, message: result + ' => Token pushed successfully!'});
     });
 });

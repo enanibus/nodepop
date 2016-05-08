@@ -54,8 +54,6 @@ router.post('/registro', function (req, res) {
         return errorHandler(new Error('Sigin failed. EMAIL_INVALID_FORMAT'), req, res, 400);
     }
 
-    console.log(req.body);
-
     new Usuario({
 
         nombre: req.body.nombre,

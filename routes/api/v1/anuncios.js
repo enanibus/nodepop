@@ -16,9 +16,6 @@ router.get('/', jwtAuth(), function (req, res) {
     let sort = req.query.sort || null;
     let criteria = filtro(req);
 
-    console.log(criteria);
-    console.log(req.query.includeTotal);
-
     if (!req.query.includeTotal) {
 
         Anuncio.list(criteria, start, limit, sort, function (err, rows) {
@@ -38,7 +35,6 @@ router.get('/', jwtAuth(), function (req, res) {
                     if (err) {
                         return errorHandler(new Error('Internal server error. DB_FETCH_ERROR'), req, res, 500);
                     }
-                    console.log(count);
                     res.json({success: true, total: count, rows: rows});
                 });
             });
