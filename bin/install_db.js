@@ -11,8 +11,8 @@ let mongoose = require('mongoose');
 let conn = mongoose.connection;
 
 // Models
-require('../models/Anuncio');
-require('../models/Usuario');
+require('../models/anuncio');
+require('../models/usuario');
 require('../models/Token');
 
 // Entities
