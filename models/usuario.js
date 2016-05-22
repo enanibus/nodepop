@@ -11,5 +11,4 @@ let usuarioSchema = mongoose.Schema({
 
 usuarioSchema.index({ 'email': 1 }, { unique: true });
 
-
 let Usuario = mongoose.model('Usuario', usuarioSchema);

@@ -3,7 +3,7 @@
 let tags = require('../config/local_config').tags;
 
 
-let listTags = function(callback) {
+let listTags = function (callback) {
     callback(null, tags);
 };
 
