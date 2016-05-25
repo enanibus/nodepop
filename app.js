@@ -12,8 +12,8 @@ let routes = require('./routes/index');
 // Database connection
 require('./lib/connectDatabase');
 // Models
-require('./models/Anuncio');
-require('./models/Usuario');
+require('./models/anuncio');
+require('./models/usuario');
 require('./models/Token');
 require('./models/Tag');
 
