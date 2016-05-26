@@ -36,10 +36,16 @@ Los servicios que proporciona el API son:
 - **Guardar token de push** (para notificaciones push)
 - **Lista de tags existentes** (categorías de anuncios)
 
+## URLs DevOps
+
+- [Nodepop API](http://nodepop.jacoboenriquez.com/)
+- [Archivos estáticos](http://nodepop.jacoboenriquez.com/images/anuncios/)
+- [IP servidor](http://52.37.152.144/)
+
 ## Changelog
 
 * 0.0.1: start
-
+* 0.0.2: inclusión de URLs en README.md entrega práctica curso DevOps
 
 ## Autor
 
