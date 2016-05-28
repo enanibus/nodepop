@@ -39,8 +39,12 @@ Los servicios que proporciona el API son:
 ## URLs DevOps
 
 - [Nodepop API](http://nodepop.jacoboenriquez.com/)
-- [Archivos estáticos](http://nodepop.jacoboenriquez.com/images/anuncios/)
+- [Ruta de imágenes de anuncios/bici BH](http://nodepop.jacoboenriquez.com/images/anuncios/bici2.jpg)
 - [IP servidor](http://52.37.152.144/)
+
+#### Ejemplos de archivos estáticos DevOps
+- Al acceder al enlace principal del API *[Nodepop API](http://nodepop.jacoboenriquez.com/)*, se puede comprobar que nginx devuelve la hoja de estilos del directorio `/public/stylesheets/style.css` con la cabecera personalizada X-Owner
+- Al acceder al enlace *[Ruta de imágenes de anuncios/bici BH](http://nodepop.jacoboenriquez.com/images/anuncios/bici2.jpg)*, se puede comprobar que nginx devuelve la foto del directorio `/public/images/anuncios/bici2.jpg` con la cabecera personalizada X-Owner
 
 ## Changelog
 
